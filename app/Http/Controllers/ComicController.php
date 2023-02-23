@@ -55,7 +55,37 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        $icons = [
+            [
+                'nome' => 'Digital Comics',
+                'img' => '../resources/img/buy-comics-digital-comics.png'
+            ],
+            [
+                'nome' => 'DC Merchandise',
+                'img' => '../resources/img/buy-comics-merchandise.png'
+            ],
+            [
+                'nome' => 'Subscription',
+                'img' => '../resources/img/buy-comics-subscriptions.png'
+            ],
+            [
+                'nome' => 'Comic Shop Locator',
+                'img' => '../resources/img/buy-comics-shop-locator.png'
+            ],
+            [
+                'nome' => 'CD Power Visa',
+                'img' => '../resources/img/buy-dc-power-visa.svg'
+            ]
+        ];
+
+        $socials = [
+            'facebook' => '../resources/img/footer-facebook.png',
+            'twitter' => '../resources/img/footer-twitter.png',
+            'youtube' => '../resources/img/footer-youtube.png',
+            'pinterest' => '../resources/img/footer-pinterest.png',
+            'periscope' => '../resources/img/footer-periscope.png',
+        ];
+        return view('comics.create', compact('icons', 'socials'));
     }
 
     /**
@@ -66,7 +96,18 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form_data = $request->all();
+
+        $newComic = new Comic();
+        $newComic->title = $form_data['title'];
+        $newComic->description = $form_data['description'];
+        $newComic->price = $form_data['price'];
+        $newComic->series = $form_data['series'];
+        $newComic->type = $form_data['type'];
+        $newComic->title = $form_data['title'];
+
+        $newComic->save();
+        return redirect()->route('comics.show', ['comic' => $newComic->id]);
     }
 
     /**
@@ -77,8 +118,45 @@ class ComicController extends Controller
      */
     public function show($id)
     {
-        $comics = Comic::findOrFail($id);
-        return view('comics.index', $comics);
+        $icons = [
+            [
+                'nome' => 'Digital Comics',
+                'img' => '../resources/img/buy-comics-digital-comics.png'
+            ],
+            [
+                'nome' => 'DC Merchandise',
+                'img' => '../resources/img/buy-comics-merchandise.png'
+            ],
+            [
+                'nome' => 'Subscription',
+                'img' => '../resources/img/buy-comics-subscriptions.png'
+            ],
+            [
+                'nome' => 'Comic Shop Locator',
+                'img' => '../resources/img/buy-comics-shop-locator.png'
+            ],
+            [
+                'nome' => 'CD Power Visa',
+                'img' => '../resources/img/buy-dc-power-visa.svg'
+            ]
+        ];
+
+        $socials = [
+            'facebook' => '../resources/img/footer-facebook.png',
+            'twitter' => '../resources/img/footer-twitter.png',
+            'youtube' => '../resources/img/footer-youtube.png',
+            'pinterest' => '../resources/img/footer-pinterest.png',
+            'periscope' => '../resources/img/footer-periscope.png',
+        ];
+
+        $comics = Comic::find($id);
+        if ($comics) {
+            $data = [
+                'comic' => $comics
+            ];
+        }
+
+        return view('comics.show', $data, compact('socials', 'icons'));
     }
 
     /**

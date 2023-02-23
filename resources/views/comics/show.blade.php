@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Fumetto</title>
-</head>
-<body>
-    @include('partials.header')
-    @include('partials.jumbotron')
+@extends('layouts.app')
+    @section('content')
     <div class="container-fluid blue-bar position-relative">
         <div class="p-2 position-absolute">
             <div>
@@ -19,6 +10,13 @@
         </div>
     </div>
     <div class="container back-grey">
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-start p-3">
+                    <a class="btn btn-primary" href="{{route('comics.index')}}">Torna A Tutti I fumetti</a>
+                </div>
+            </div>
+        </div>
         <div class="row" >
             <div class="col-8">
                 <div class="d-flex justify-content-center align-items-center">  
@@ -132,6 +130,4 @@
             </div>
         </div>
     </div>
-    @include('partials.footer')
-</body>
-</html>
+    @endsection
