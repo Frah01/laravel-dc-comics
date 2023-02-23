@@ -7,7 +7,8 @@
                 <div class="card bg-transparent card-cont text-center border-0 text-white m-2">
                     <img class="thumbs"  src="{{$comic['thumb']}}" alt="{{$comic['title']}}">
                     <div class="card-body">
-                        <a class="fw-bold" href="{{route('detail-comics',['slug' => $comic['slug']])}}">{{$comic['title']}}</a>
+                        <a class="fw-bold" >{{$comic['title']}}</a>
+                        {{-- href="{{route('detail-comics',['id' => $comic['id']])}}" --}}
                     </div>
                 </div>
                 @endforeach
