@@ -27,7 +27,7 @@
                     </div>
                     <div class="form-group">
                         <label class="control-label"><p>Sale Date</p></label>
-                        <input type="text" name="type" class="form-control" placeholder="Inserisci la Data">
+                        <input type="text" name="sale_date" class="form-control" placeholder="Inserisci la Data">
                     </div>
                     <div class="form-group">
                         <label class="control-label"><p>Genere</p></label>

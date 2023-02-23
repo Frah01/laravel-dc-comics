@@ -103,10 +103,11 @@ class ComicController extends Controller
         $newComic->description = $form_data['description'];
         $newComic->price = $form_data['price'];
         $newComic->series = $form_data['series'];
+        $newComic->thumb = $form_data['thumb'];
+        $newComic->sale_date = $form_data['sale_date'];
         $newComic->type = $form_data['type'];
-        $newComic->title = $form_data['title'];
-
         $newComic->save();
+        // $newComic = Comic::create($form_data);
         return redirect()->route('comics.show', ['comic' => $newComic->id]);
     }
 
