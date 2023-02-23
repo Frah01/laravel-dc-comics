@@ -1,0 +1,235 @@
+@import '~bootstrap/scss/bootstrap';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(235, 233, 233);
+}
+
+header a {
+    color: black;
+    text-decoration: none;
+}
+
+footer li:hover {
+    cursor: pointer;
+    color: rgb(61, 61, 255);
+}
+
+.thumbs {
+    height: 200px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.card-cont {
+    width: 200px;
+}
+
+.background-cards {
+    background-color: rgba(28, 28, 28, 255);
+}
+
+.sing-up-footer,
+.footer-background {
+    background-color: rgba(48, 48, 48, 255);
+}
+
+.footer-button {
+    background-color: transparent;
+    border: 2px solid rgba(18, 101, 179, 255);
+    padding: 10px;
+}
+
+.footer-list {
+    list-style-type: none;
+}
+
+.film-button {
+    background-color: rgba(2, 130, 249, 255);
+    border: none;
+    padding: 3px 30px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.merch-icons {
+    width: 50px;
+}
+
+.jumbotron {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.card-body a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: rgb(61, 61, 255);
+}
+
+.thumb-color {
+    text-decoration: none;
+}
+
+.price-bar {
+    background-color: rgb(73, 194, 73);
+
+    h6 {
+        color: rgb(173, 253, 173);
+        margin-bottom: 0;
+    }
+}
+
+p {
+    margin-bottom: 0;
+}
+
+
+
+.col-50 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+
+.col-50-dx {
+    background-repeat: no-repeat;
+    background-image: url(../assets/img/dc-logo-bg.png);
+    width: 50%;
+
+
+}
+
+.second-section-footer .col-50 {
+    align-items: center;
+}
+
+.list {
+    list-style-type: none;
+    color: white;
+    margin-right: 20px;
+    margin-top: 20px;
+    line-height: 35px;
+    font-size: 13px;
+
+    h2 {
+        color: white
+    }
+}
+
+footer {
+    background-image: url(../img/footer-bg.jpg);
+    background-size: cover;
+}
+
+
+
+.second-section-footer {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(48, 48, 48, 255);
+}
+
+
+.content-second-section-footer {
+    display: flex;
+    align-items: center;
+
+    h3 {
+        color: rgba(5, 123, 215, 255);
+        margin: 0px 10px;
+    }
+
+    img {
+        margin: 0px 10px;
+    }
+}
+
+.title-comic {
+    color: rgba(5, 123, 215, 255);
+}
+
+.search-box {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+}
+
+.input-search {
+    height: 50px;
+    width: 50px;
+    border-style: none;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 25px;
+    transition: all .5s ease-in-out;
+    padding-right: 40px;
+
+}
+
+.input-search::placeholder {
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 100;
+}
+
+
+
+.btn-search~.input-search {
+    width: 200px;
+    border-radius: 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+
+
+}
+
+.input-search {
+    width: 200px;
+    border-radius: 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+
+}
+
+
+.position-relative {
+    position: relative
+}
+
+
+.position-absolute {
+    position: absolute;
+    top: -250px;
+    left: 320px;
+
+}
+
+.blue-bar {
+    padding: 30px;
+    background-color: rgba(2, 130, 249, 255);
+}
+
+.thumbnail {
+    border: 1px solid white;
+    box-shadow: 1px 1px 5px black;
+}
+
+.color-grey {
+    filter: invert(25%);
+}
+
+.back-grey {
+    background-color: rgb(235, 233, 233)
+}
