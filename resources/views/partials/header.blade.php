@@ -32,7 +32,7 @@
                   <a href="">Characters</a>
                 </li>
                 <li class="mx-2 text-uppercase fw-semibold">
-                  <a href="">Comics</a>
+                  <a href="{{route('comics.index')}}">Comics</a>
                 </li>
                 <li class="mx-2 text-uppercase fw-semibold">
                   <a href="">Movies</a>
