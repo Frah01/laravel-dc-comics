@@ -96,6 +96,18 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'title' => 'required|max:50',
+            'description' => 'required|max:200',
+            'price' => 'required|max:10',
+            'series' => 'required|max:50',
+            'thumb' => 'required|max:100',
+            'sale_date' => 'required|max:10',
+            'type' => 'required|max:20',
+
+        ]);
+
         $form_data = $request->all();
 
         $newComic = new Comic();
@@ -103,10 +115,12 @@ class ComicController extends Controller
         $newComic->description = $form_data['description'];
         $newComic->price = $form_data['price'];
         $newComic->series = $form_data['series'];
+        $newComic->thumb = $form_data['thumb'];
+        $newComic->sale_date = $form_data['sale_date'];
         $newComic->type = $form_data['type'];
-        $newComic->title = $form_data['title'];
-
         $newComic->save();
+        // $newComic = Comic::create($form_data);
+        // $newComic->fill($form_data);
         return redirect()->route('comics.show', ['comic' => $newComic->id]);
     }
 
@@ -167,7 +181,44 @@ class ComicController extends Controller
      */
     public function edit($id)
     {
-        //
+        $icons = [
+            [
+                'nome' => 'Digital Comics',
+                'img' => '../resources/img/buy-comics-digital-comics.png'
+            ],
+            [
+                'nome' => 'DC Merchandise',
+                'img' => '../resources/img/buy-comics-merchandise.png'
+            ],
+            [
+                'nome' => 'Subscription',
+                'img' => '../resources/img/buy-comics-subscriptions.png'
+            ],
+            [
+                'nome' => 'Comic Shop Locator',
+                'img' => '../resources/img/buy-comics-shop-locator.png'
+            ],
+            [
+                'nome' => 'CD Power Visa',
+                'img' => '../resources/img/buy-dc-power-visa.svg'
+            ]
+        ];
+
+        $socials = [
+            'facebook' => '../resources/img/footer-facebook.png',
+            'twitter' => '../resources/img/footer-twitter.png',
+            'youtube' => '../resources/img/footer-youtube.png',
+            'pinterest' => '../resources/img/footer-pinterest.png',
+            'periscope' => '../resources/img/footer-periscope.png',
+        ];
+
+        $comic = Comic::find($id);
+        if ($comic) {
+            $data = [
+                'comic' => $comic
+            ];
+            return view('comics.edit', $data, compact('socials', 'icons'));
+        }
     }
 
     /**
@@ -179,7 +230,12 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+
+        $comic = Comic::findOrFail($id);
+        $form_data = $request->all();
+        $comic->update($form_data);
+        return redirect()->route('comics.show', ['comic' => $comic->id]);
     }
 
     /**
@@ -190,6 +246,5 @@ class ComicController extends Controller
      */
     public function destroy($id)
     {
-        //
     }
 }

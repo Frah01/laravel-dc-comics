@@ -15,12 +15,12 @@
                     <img class="thumbs"  src="{{$comic['thumb']}}" alt="{{$comic['title']}}">
                     <div class="card-body">
                         <a class="fw-bold" href="{{route('comics.show', ['comic'=> $comic['id']])}}">{{$comic['title']}}</a>
+                        <div>
+                            <a href="{{route('comics.show', ['comic'=> $comic['id']])}}" class="btn btn-info btn-sm btn-square my-1" title="Dettaglio Comic"><i class="fa fa-eye"></i></a>
+                            <a href="{{route('comics.edit', ['comic'=> $comic['id']])}}" class="btn btn-secondary btn-sm btn-square my-1" title="Modifica Comic"><i class="fa fa-edit"></i></a>
+                        </div>
                     </div>
                 </div>
-                    <div class="col">
-                        <a href="{{route('comics.show', ['comic'=> $comic['id']])}}" class="btn btn-info btn-sm btn-square my-1" title="Dettaglio Comic"><i class="fa fa-eye"></i></a>
-                        <a href="" class="btn btn-warning btn-sm btn-square my-1"><i class="fa fa-edit"></i></a>
-                    </div>
                 @endforeach
             </div>
         </div>
@@ -48,4 +48,5 @@
             </div>
         </div>
     </div>
+    {{-- modale --}}
     @endsection

@@ -14,16 +14,13 @@
                         </div>
                     </div>
                 </div>
-                <form class="p-3" action="{{route('comics.store')}}" method="POST">
+                <form class="p-3" action="{{route('comics.update', $comic->id)}}" method="POST">
                     @csrf
+                    @method('PUT')
                     <div class="form-group">
                         <label class="control-label"><p>Titolo</p></label>
-                        <input type="text" name="title" class="form-control" placeholder="Inserisci il titolo">
-                        @error('title')
-                            <div>
-                                <p>{{$message}}</p>
-                            </div>
-                        @enderror
+                        <input type="text" name="title" class="form-control" placeholder="Inserisci il titolo" value="{{old('title') ?? $comic->title}}">
+                        
                     </div>
                     <div class="form-floating py-2">
                         <textarea name="description" class="form-control" placeholder="Descrizione" id="floatingTextarea2"></textarea>
@@ -50,7 +47,7 @@
                         <input type="text" name="type" class="form-control" placeholder="Inserisci il Genere">
                     </div>
                     <div class="form-group my-3">
-                        <button type="submit" class="btn btn-success" >Salva Il Nuovo Fumetto</button>
+                        <button type="submit" class="btn btn-success" class="form-control" >Salva le Modifiche</button>
                     </div>
                 </form>
             </div>
