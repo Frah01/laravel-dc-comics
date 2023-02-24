@@ -3,6 +3,15 @@
     <div class="container">
         <div class="row">
             <div class="offset-3 col-6">
+                <div class="container" >
+                    <div class="row">
+                        <div class="col">
+                            @foreach ($errors->all() as $error)
+                                <li>{{$error}}</li>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
                 <form class="p-3" action="{{route('comics.store')}}" method="POST">
                     @csrf
                     <div class="form-group">
@@ -10,8 +19,8 @@
                         <input type="text" name="title" class="form-control" placeholder="Inserisci il titolo">
                     </div>
                     <div class="form-floating py-2">
-                        <textarea name="description" class="form-control" placeholder="Descirzione" id="floatingTextarea"></textarea>
-                        <label for="floatingTextarea">Descrizione</label>
+                        <textarea name="description" class="form-control" placeholder="Descrizione" id="floatingTextarea2"></textarea>
+                        <label for="floatingTextarea2">Descrizione</label>
                       </div>
                     <div class="form-group">
                         <label class="control-label"><p>Thumbnail</p></label>
