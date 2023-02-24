@@ -53,5 +53,5 @@
             </div>
         </div>
     </div>
-    {{-- modale --}}
+    @include('partials.modal_delete')
     @endsection

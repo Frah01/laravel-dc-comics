@@ -99,10 +99,10 @@ class ComicController extends Controller
 
         $request->validate([
             'title' => 'required|max:50',
-            'description' => 'required|max:200',
+            'description' => 'required|max:1000',
             'price' => 'required|max:10',
             'series' => 'required|max:50',
-            'thumb' => 'required|max:100',
+            'thumb' => 'required|max:500',
             'sale_date' => 'required|max:10',
             'type' => 'required|max:20',
 
@@ -233,7 +233,7 @@ class ComicController extends Controller
 
 
         $comic = Comic::findOrFail($id);
-        $form_data = $this->validation($request->all());
+        $form_data = $request->all();
         $comic->update($form_data);
         return redirect()->route('comics.show', ['comic' => $comic->id]);
     }

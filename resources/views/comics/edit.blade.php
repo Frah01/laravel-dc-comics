@@ -19,13 +19,12 @@
                     @method('PUT')
                     <div class="form-group">
                         <label class="control-label"><p>Titolo</p></label>
-                        <input type="text" name="title" class="form-control" placeholder="Inserisci il titolo" value="{{old('title') ?? $comic->title}}">
-                        
+                        <input type="text" name="title" class="form-control" placeholder="Inserisci il titolo" value="{{old('title') ?? $comic->title}}">   
                     </div>
-                    <div class="form-floating py-2">
-                        <textarea name="description" class="form-control" placeholder="Descrizione" id="floatingTextarea2" value="{{old('description') ?? $comic->description}}"></textarea>
                         <label for="floatingTextarea2">Descrizione</label>
-                      </div>
+                        <textarea name="description" class="form-control" placeholder="Descrizione"  rows="10">
+                            {{old('description') ?? $comic->description}}
+                        </textarea>
                     <div class="form-group">
                         <label class="control-label"><p>Thumbnail</p></label>
                         <input type="text" name="thumb" class="form-control" placeholder="Inserisci la thumbnail" value="{{old('thumb') ?? $comic->thumb}}">
@@ -36,7 +35,7 @@
                     </div>
                     <div class="form-group">
                         <label class="control-label"><p>Serie</p></label>
-                        <input type="text" name="series" class="form-control" placeholder="Inserisci la Serie" value="{{old('serie') ?? $comic->serie}}">
+                        <input type="text" name="series" class="form-control" placeholder="Inserisci la Serie" value="{{old('series') ?? $comic->series}}">
                     </div>
                     <div class="form-group">
                         <label class="control-label"><p>Sale Date</p></label>
