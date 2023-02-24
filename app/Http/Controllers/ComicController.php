@@ -233,7 +233,7 @@ class ComicController extends Controller
 
 
         $comic = Comic::findOrFail($id);
-        $form_data = $request->all();
+        $form_data = $this->validation($request->all());
         $comic->update($form_data);
         return redirect()->route('comics.show', ['comic' => $comic->id]);
     }
@@ -246,5 +246,8 @@ class ComicController extends Controller
      */
     public function destroy($id)
     {
+        $comic = Comic::findOrFail($id);
+        $comic->delete();
+        return redirect()->route('comics.index');
     }
 }

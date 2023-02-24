@@ -18,6 +18,11 @@
                         <div>
                             <a href="{{route('comics.show', ['comic'=> $comic['id']])}}" class="btn btn-info btn-sm btn-square my-1" title="Dettaglio Comic"><i class="fa fa-eye"></i></a>
                             <a href="{{route('comics.edit', ['comic'=> $comic['id']])}}" class="btn btn-secondary btn-sm btn-square my-1" title="Modifica Comic"><i class="fa fa-edit"></i></a>
+                            <form class="d-inline-block" method="POST" action="{{route('comics.destroy', ['comic'=> $comic['id']])}}">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-sm btn-square btn-danger confirm-delete-button" data-title="{{$comic->title}}"><i class="fas fa-trash" ></i></button>
+                            </form>
                         </div>
                     </div>
                 </div>

@@ -23,28 +23,28 @@
                         
                     </div>
                     <div class="form-floating py-2">
-                        <textarea name="description" class="form-control" placeholder="Descrizione" id="floatingTextarea2"></textarea>
+                        <textarea name="description" class="form-control" placeholder="Descrizione" id="floatingTextarea2" value="{{old('description') ?? $comic->description}}"></textarea>
                         <label for="floatingTextarea2">Descrizione</label>
                       </div>
                     <div class="form-group">
                         <label class="control-label"><p>Thumbnail</p></label>
-                        <input type="text" name="thumb" class="form-control" placeholder="Inserisci la thumbnail">
+                        <input type="text" name="thumb" class="form-control" placeholder="Inserisci la thumbnail" value="{{old('thumb') ?? $comic->thumb}}">
                     </div>
                     <div class="form-group">
                         <label class="control-label"><p>Prezzo</p></label>
-                        <input type="text" name="price" class="form-control" placeholder="Inserisci il Prezzo">
+                        <input type="text" name="price" class="form-control" placeholder="Inserisci il Prezzo" value="{{old('price') ?? $comic->price}}">
                     </div>
                     <div class="form-group">
                         <label class="control-label"><p>Serie</p></label>
-                        <input type="text" name="series" class="form-control" placeholder="Inserisci la Serie">
+                        <input type="text" name="series" class="form-control" placeholder="Inserisci la Serie" value="{{old('serie') ?? $comic->serie}}">
                     </div>
                     <div class="form-group">
                         <label class="control-label"><p>Sale Date</p></label>
-                        <input type="text" name="sale_date" class="form-control" placeholder="Inserisci la Data">
+                        <input type="text" name="sale_date" class="form-control" placeholder="Inserisci la Data" value="{{old('sale_date') ?? $comic->sale_date}}">
                     </div>
                     <div class="form-group">
                         <label class="control-label"><p>Genere</p></label>
-                        <input type="text" name="type" class="form-control" placeholder="Inserisci il Genere">
+                        <input type="text" name="type" class="form-control" placeholder="Inserisci il Genere" value="{{old('type') ?? $comic->type}}">
                     </div>
                     <div class="form-group my-3">
                         <button type="submit" class="btn btn-success" class="form-control" >Salva le Modifiche</button>
